@@ -1,11 +1,11 @@
 <template>
-<div class="container is-fluid">
-<!-- <div class="columns"> -->
-<div class="column is-6">
+<div class="container is-mobile">
+<div class="column is-4">
+<!-- <div class="column is-4"> -->
 <nav class="panel">
 <p class="panel-heading">List Maker</p>
 <div class="panel-block">
-<div class="field">
+<div class="control is-expanded">
 <inputText
 v-model="newTodoText"
 placeholder="New todo"
@@ -17,7 +17,7 @@ v-for="todo in todos"
 :todo="todo"
 @remove="removeTodo"/>
 </ul>
-<div class="field-body" v-else>
+<div class="control is-expanded" v-else>
 Nothing left in the list. Add a new todo in the input above.
 </div>
 </div>
@@ -76,3 +76,6 @@ export default {
   }
 }
 </script>
+<style scoped>
+.panel {margin-top: .1rem}
+</style>

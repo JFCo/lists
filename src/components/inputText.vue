@@ -1,12 +1,15 @@
 <template>
-<b-field expanded>
+<div class="field">
+<div class="control is-expanded">
   <input
     type="text"
-    class="input"
+    class="input is-primary"
+    placeholder="Add Another Item"
     :value="value"
     v-on="listeners"
   >
-</b-field>
+</div>
+</div>
 </template>
 
 <script>
