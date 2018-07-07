@@ -3,20 +3,20 @@
 <div class="column is-4">
 <!-- <div class="column is-4"> -->
 <nav class="panel">
-<p class="panel-heading"><b>List Maker</b></p>
+<p class="panel-heading"><b>List Maker</b>
+</p>
 <div class="panel-block">
 <div class="control is-expanded">
 <inputText
 v-model="newTodoText"
-placeholder="New todo"
 @keydown.enter="addTodo"/>
-<ul v-if="todos.length">
+<div v-if="todos.length">
 <listItem
 v-for="todo in todos"
 :key="todo.id"
 :todo="todo"
 @remove="removeTodo"/>
-</ul>
+</div>
 <div class="control is-expanded" v-else>
 Nothing left in the list. Add a new todo in the input above.
 </div>
@@ -42,6 +42,7 @@ export default {
     return {
       newTodoText: '',
       todos: []
+    //   currentOrder: 'text'
     }
   },
   methods: {
@@ -60,6 +61,14 @@ export default {
         return todo.id !== idToRemove
       })
     }
+    // toggleOrder (text) {
+    //   this.currentOrder = text
+    // },
+    // orderedItems (todos) {
+    //   return todos.filter(todo => {
+    //     if (todo[this.currentOrder]) return todo
+    //   })
+    // }
   },
   mounted () {
     console.log('App mounted!')
@@ -73,6 +82,9 @@ export default {
       },
       deep: true
     }
+    // sortedTodos () {
+    //   console.log('[todos] sortedTodos changed')
+    // }
   }
 }
 </script>
