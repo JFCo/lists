@@ -3,7 +3,7 @@
 <div class="column is-4">
 <!-- <div class="column is-4"> -->
 <nav class="panel">
-<p class="panel-heading">List Maker</p>
+<p class="panel-heading"><b>List Maker</b></p>
 <div class="panel-block">
 <div class="control is-expanded">
 <inputText
